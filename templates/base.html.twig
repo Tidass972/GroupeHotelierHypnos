@@ -6,13 +6,12 @@
         <meta name="description" content="Meilleurs hôtels de luxe dans les 7 plus belles ville de France, pour votre séjour en amoureux">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
         <title>{% block title %}Hypnos{% endblock %}</title>
-
-        <link rel="stylesheet" href="animate.min.css">
 
             <!-- Bootstrap core CSS -->
         <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
 
         <style>
             .bd-placeholder-img {
@@ -54,6 +53,7 @@
                 </div>
             </nav>
 
+
             <section>
                 <div>
                     <img src="{{ asset('assets/images/imageHeader.jpg') }}" alt="picine intérieur privé" class="w-100 d-block" height="720">
@@ -63,21 +63,24 @@
 
         <main role="main">
 
+
+            {% if block('imageHeadear') is defined %}
         <section class="pt-5">
             <article>
-                <h1 class="text-center pt-5"> La chaîne hôtelière <em>Hypnos</em> </h1><br><p class="text-center pb-2">The ultimate reférence </p>
+                <h1 class="text-center pt-2"> Votre chaîne hôtelière <em>Hypnos</em> </h1><br><p class="text-center pb-2">" The ultimate reférence " </p>
 
             </article>
             <div class="p-5">
-                <h2 class="p-5 text-center">Trois bonnes raisons de venir chez nous</h2>
+                <h2 class="p-2 text-center">Nos Hôtels haut de gamme</h2>
+                <hr class="featurette-divider">
             </div>
         </section>
-
+            {% endif %}
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
 
-    <div class="container marketing">
+    <div class="container marketing {% if block('imageHeadear') is not defined %}mt-5{% endif %}">
 
        {% block content %}
         {% endblock %}
@@ -85,8 +88,8 @@
 
     <!-- FOOTER -->
     <footer class="container">
-        <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p class="float-right">Rosine David.</p>
+        <p>Copyright &copy; 2022 Groupe Hypnos Hotel Company &middot; Tous droits réservé.</p>
     </footer>
 </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
