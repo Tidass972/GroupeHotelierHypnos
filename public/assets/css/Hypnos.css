@@ -1,0 +1,30 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: radial-gradient(circle at -13.46% 55.55%, #bce1dc 0, #bae1df 4.55%, #bae1e2 9.09%, #bae0e5 13.64%, #bae0e8 18.18%, #bcdfeb 22.73%, #bddfed 27.27%, #c0deef 31.82%, #c2ddf0 36.36%, #c6dcf1 40.91%, #c9dbf2 45.45%, #cddaf2 50%, #d1d9f2 54.55%, #d5d8f1 59.09%, #d9d7f0 63.64%, #ddd6ee 68.18%, #e1d5ec 72.73%, #e5d4ea 77.27%, #e8d3e7 81.82%, #ebd2e5 86.36%, #eed2e2 90.91%, #f0d1de 95.45%, #f2d1db 100%);
+}
+h1,
+h2 {
+    font-family: 'Shadows Into Light Two', cursive;
+}
+.ville {
+    text-shadow: 3px 3px 3px #fff;
+    font-weight: lighter;
+}
+p {
+    font-family: 'Marcellus SC', serif;
+    font-family: 'Roboto', sans-serif;
+}
+.pic-custome {
+    border-radius: 15px;
+}
+#effet {
+    box-shadow: 1px 1px 2px 1px #000000;
+}
+.navbar-item-custom a {
+    color: #000;
+}
+.footer-custom {
+    text-align: center;
+    width: 100%;
+    padding-top: 25px;
+}

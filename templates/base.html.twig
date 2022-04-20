@@ -4,14 +4,17 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Meilleurs hôtels de luxe dans les 7 plus belles ville de France, pour votre séjour en amoureux">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <title>{% block title %}Hypnos{% endblock %}</title>
 
-            <!-- Bootstrap core CSS -->
-        <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
-
+        <!-- Font-Family -->
         <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+        <!-- Bootstrap core CSS -->
+        <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/Hypnos.css') }}" rel="stylesheet">
 
         <style>
             .bd-placeholder-img {
@@ -34,24 +37,34 @@
     </head>
 
     <body>
+
         <header>
-            <nav class="navbar navbar-light navbar-expand-md sticky-top bg-white">
-                <div class="container">
-                    <div>
-                        <img src="{{ asset('assets/images/logo_hypnos.png') }}" alt="Logo" height="130px">
+            <nav class="navbar navbar-expand-md navbar-light fixed-top bg-white">
+                <a class="navbar-brand" href="{{ path('app_home')}}"><img src="{{ asset('assets/images/logo_hypnos.png') }}" alt="Logo" height="130px"></a>
+
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Nos hôtels</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Qui sommes-nous ?</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <div class="navbar-item-custom">
+                        {% if app.user %}
+                            <a href="{{ path('app_account') }}">Mon compte<small>({{ app.user.firstname }})</small></a> / <a href="{{ path('app_logout') }}">Déconnexion</a>
+                        {% else %}
+                            <a href="{{ path('app_login') }}">Connexion</a> / <a href="{{ path('app_register') }}">Inscription</a>
+                        {% endif %}
                     </div>
-                    <div class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menuderoulant">
-                        <span class="navbar-toggler-icon"></span>
-                    </div>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Accueil</a>
-                            </li>
-                        </ul>
-                    </div>
+
                 </div>
             </nav>
+        </header>
 
 
             <section>
@@ -66,12 +79,12 @@
 
             {% if block('imageHeadear') is defined %}
         <section class="pt-5">
-            <article>
-                <h1 class="text-center pt-2"> Votre chaîne hôtelière <em>Hypnos</em> </h1><br><p class="text-center pb-2">" The ultimate reférence " </p>
+            <article id="effet" class="mt-5">
+                <h1 class="text-center pt-4"> Votre chaîne hôtelière <em>Hypnos</em> </h1><br><p class="text-center pb-2">
 
             </article>
             <div class="p-5">
-                <h2 class="p-2 text-center">Nos Hôtels haut de gamme</h2>
+                <h2 class="p-5 text-center">Nos Hôtels haut de gamme</h2>
                 <hr class="featurette-divider">
             </div>
         </section>
@@ -84,12 +97,13 @@
 
        {% block content %}
         {% endblock %}
-    </div><!-- /.container -->
+    </div>
+            <hr>
 
     <!-- FOOTER -->
-    <footer class="container">
-        <p class="float-right">Rosine David.</p>
-        <p>Copyright &copy; 2022 Groupe Hypnos Hotel Company &middot; Tous droits réservé.</p>
+    <footer class="footer-custom">
+        <p>Copyright &copy; 2022 Groupe Hypnos Hotel  &middot; Tous droits réservé.<br>Rosine David.<br><small>" The ultimate référence "</small></p>
+
     </footer>
 </main>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
