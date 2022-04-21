@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="Meilleurs hôtels de luxe dans les 7 plus belles ville de France, pour votre séjour en amoureux">
-        <title>{% block title %}Hypnos{% endblock %}</title>
+        <title>{% block title %}Hypnos Groupe{% endblock %}</title>
 
         <!-- Font-Family -->
         <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
@@ -44,13 +44,22 @@
 
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Nos hôtels</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" role="button">Nos hôtels</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="{{ path('app_paris')}}">Hypnos Paris</a>
+                                <a class="dropdown-item" href="{{ path('app_nice')}}">Hypnos Nice</a>
+                                <a class="dropdown-item" href="{{ path('app_lyon')}}">Hypnos Lyon</a>
+                                <a class="dropdown-item" href="{{ path('app_montpellier')}}">Hypnos Montpellier</a>
+                                <a class="dropdown-item" href="{{ path('app_marseille')}}">Hypnos Marseille</a>
+                                <a class="dropdown-item" href="{{ path('app_biarritz')}}">Hypnos Biarritz</a>
+                                <a class="dropdown-item" href="{{ path('app_annecy')}}">Hypnos Annecy</a>
+                            </div>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Qui sommes-nous ?</a>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ path('admin') }}">Qui sommes-nous ?</a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item ">
                             <a class="nav-link" href="#">Contact</a>
                         </li>
                     </ul>
